@@ -102,21 +102,6 @@ function moveForward() {
     setTimeout(function () { rightButton.style.cssText = "border-left: 50px solid #261503;" }, 200);
 };
 
-
-// запрос на получение деталей
-function getDetails(url) {
-    var details;
-    var xhr = new XMLHttpRequest();
-    xhr.open("get", url, false);
-
-    xhr.onload = function () {
-        details = JSON.parse(xhr.response);
-    };
-
-    xhr.send();
-    return details
-};
-
 // получене выбранного объекта
 function showDetails(event) {
     if (event.target.className === "person") {
@@ -154,6 +139,21 @@ function forDetails(personInformation, destination, key) {
             destination.innerHTML = details.name;
         }
     }
+};
+
+// запрос на получение деталей
+function getDetails(url) {
+    url = url.replace(/http/i, "https")
+    var details;
+    var xhr = new XMLHttpRequest();
+    xhr.open("get", url, false);
+
+    xhr.onload = function () {
+        details = JSON.parse(xhr.response);
+    };
+
+    xhr.send();
+    return details
 };
 
 function hideDetails() {
