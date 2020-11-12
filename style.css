@@ -8,7 +8,7 @@ body {
     height: 100%;
 }
 
-.container__elements {
+.container-elements {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -70,8 +70,8 @@ body {
     cursor: pointer;
 }
 
-.container__details {
-    position: absolute;
+.container-details {
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,20 +103,22 @@ td {
     min-height: 500px;
     font-size: 25px;
     overflow: hidden;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 table {
     background: linear-gradient(to top, #ff6333, #ffc233);
 }
 
-.delete-btn {
+.close-btn {
     align-self: flex-end;
     cursor: pointer;
     color: #ffffff;
     font-size: 40px;
 }
 
-.delete-btn:hover {
+.close-btn:hover {
     color: red;
 }
 
